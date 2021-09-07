@@ -1,0 +1,110 @@
+# inspired by gillescastel/latex-snippets
+
+snippet start "Basic template" b
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc} 
+\usepackage[brazilian]{babel} 
+\usepackage[stretch=8]{microtype} 
+\usepackage[normalem]{ulem} 
+\usepackage[autostyle=false, style=english]{csquotes} 
+\usepackage[inline, shortlabels]{enumitem} 
+\usepackage{xurl} 
+\usepackage{amsmath, amssymb, stmaryrd, tipa} 
+\usepackage{lmodern} 
+
+$0
+endsnippet
+
+snippet abnt "Espaços e fontes" b
+\usepackage{geometry} \geometry{
+	a4paper,
+	includefoot,
+	left=3cm,
+	right=3cm,
+	top=2.cm,
+	bottom= 2.5cm,
+} 
+\usepackage{setspace} \onehalfspacing 
+\usepackage{sectsty} % change the headings size and font
+	\sectionfont{\fontsize{12}{12}\selectfont} % para fontes da secao 12
+	\subsectionfont{\fontsize{12}{12}\selectfont} % para fontes da subsecao 12
+\usepackage{indentfirst} % para indentar o primeiro paragrafo automaticamente
+%\usepackage{newtxmath,newtxtext} % fonte 
+
+$0
+endsnippet
+
+snippet bib "Insert bibliography" b
+\definecolor{azul}{rgb}{0.0, 0.2, 0.5}
+\definecolor{vinho}{rgb}{0.5  0  0}
+
+\usepackage[colorlinks=true, urlcolor=azul, citecolor=vinho, linkcolor=azul]{hyperref}
+\usepackage{bookmark}
+\usepackage[style=abnt,
+			bibstyle=authoryear,
+			uniquename=false,
+			giveninits=true,
+			citestyle=authoryear,
+			hyperref=true,
+			backref=false,
+			natbib=true,
+			backend=biber]{biblatex}
+\addbibresource{${1:gitbib.bib}}
+
+$0
+endsnippet
+
+priority 100
+snippet ... "ldots" iA
+\ldots
+endsnippet
+
+#fazer setinhas ->
+
+snippet pack "\usepackage"
+\\usepackage[${1:options}]{${2:package}} ${0}
+endsnippet
+
+snippet doc "begin{document}" b
+\begin{document}
+
+
+	$0
+
+
+\end{document}
+endsnippet
+
+snippet begin "\begin{} ... \end{} block" b
+\begin{${1:Something}}
+	${0:${VISUAL}}
+\end{$1}
+endsnippet
+
+
+snippet fig "Add figure?" b
+\begin{figure}[${1:htpb}]
+	\centering
+	${2:\includegraphics[width=0.8\textwidth]}
+	\caption{$4}
+	\label{fig:$5}
+\end{figure}
+endsnippet
+
+snippet enum "Enumerate" bA
+\begin{enumerate}
+	\item $0
+\end{enumerate}
+endsnippet
+
+snippet item "Itemize" bA
+\begin{itemize}
+	\item $0
+\end{itemize}
+endsnippet
+
+snippet printbib "\printbibliography" b
+\printbibliography
+endsnippet

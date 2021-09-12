@@ -1,4 +1,9 @@
 # inspired by gillescastel/latex-snippets
+# todo: arrows
+
+snippet xelatex "uses xelatex" b
+%! TEX TS-program = xelatex
+endsnippet
 
 snippet start "Basic template" b
 \documentclass[a4paper]{article}
@@ -13,11 +18,13 @@ snippet start "Basic template" b
 \usepackage{xurl} 
 \usepackage{amsmath, amssymb, stmaryrd, tipa} 
 \usepackage{lmodern} 
+\usepackage[table]{xcolor}
+\usepackage{setspace} \onehalfspacing 
 
 $0
 endsnippet
 
-snippet abnt "Espaços e fontes" b
+snippet geom "geometry package" b
 \usepackage{geometry} \geometry{
 	a4paper,
 	includefoot,
@@ -26,7 +33,11 @@ snippet abnt "Espaços e fontes" b
 	top=2.cm,
 	bottom= 2.5cm,
 } 
-\usepackage{setspace} \onehalfspacing 
+
+$0
+endsnippet
+
+snippet abnt "Espaços e fontes" b
 \usepackage{sectsty} % change the headings size and font
 	\sectionfont{\fontsize{12}{12}\selectfont} % para fontes da secao 12
 	\subsectionfont{\fontsize{12}{12}\selectfont} % para fontes da subsecao 12
@@ -61,7 +72,6 @@ snippet ... "ldots" iA
 \ldots
 endsnippet
 
-#fazer setinhas ->
 
 snippet pack "\usepackage"
 \\usepackage[${1:options}]{${2:package}} ${0}
@@ -83,6 +93,23 @@ snippet begin "\begin{} ... \end{} block" b
 \end{$1}
 endsnippet
 
+snippet sec "add section" b
+\section{$1}
+
+{$0}
+endsnippet
+
+snippet ssec "add subsection" b
+\subsection{$1}
+
+{$0}
+endsnippet
+
+snippet sssec "add subsubsection" b
+\subsubsection{$1}
+
+{$0}
+endsnippet
 
 snippet fig "Add figure?" b
 \begin{figure}[${1:htpb}]
@@ -107,4 +134,8 @@ endsnippet
 
 snippet printbib "\printbibliography" b
 \printbibliography
+endsnippet
+
+snippet \cite "regular cite" b
+\cite{$1}$0
 endsnippet

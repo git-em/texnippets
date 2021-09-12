@@ -1,5 +1,5 @@
 = texnippets
-... just some simple latex snippets.
+*...just some simple latex snippets.
 
 = bugs?
 If you're going to symlink this into your Ultisnips folder, do it in the coc.nvim one (not into .config/nvim/ultisnips or .vim/ultisnips. This can trigger an "too many symlinks" error.

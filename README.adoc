@@ -4,5 +4,5 @@
 
 === bugs (?)
 
-If you're going to symlink this into your Ultisnips folder, do it in the coc.nvim one (not into .config/nvim/ultisnips or .vim/ultisnips. This can trigger an "too many symlinks" error.
+If you're going to symlink this into your Ultisnips folder, do it in the coc.nvim one (eg: ~/.config/coc/ultisnips), not into .config/nvim/ultisnips or .vim/ultisnips. This can trigger an "too many symlinks" error.
 
